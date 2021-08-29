@@ -10,7 +10,7 @@
         "ext-fileinfo": "*",
         "ext-json": "*",
         "ext-zip": "*",
-        "barryvdh/laravel-ide-helper": "2.9.*",
+        "barryvdh/laravel-ide-helper": "^2.10",
         "cviebrock/eloquent-sluggable": "^8.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",

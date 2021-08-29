@@ -20,3 +20,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/channels', \App\Http\Controllers\ChannelController::class)->names([
+    'index'   => 'channels.index',
+    'create'  => 'channels.create',
+    'show'    => 'channels.show',
+    'edit'    => 'channels.edit',
+    'destroy' => 'channels.delete'
+]);
