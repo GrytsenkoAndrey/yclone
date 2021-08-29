@@ -46,7 +46,7 @@ class ChannelController extends Controller
      */
     public function show(Channel $channel)
     {
-        return view('channels.show', ['channel' => $channel]);
+        return response()->view('channels.show', ['channel' => $channel]);
     }
 
     /**
@@ -64,12 +64,14 @@ class ChannelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Channel  $channel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Channel $channel)
     {
-        //
+        if ($request->hasFile('image')) {
+            $channel->addMediaFromRequest('image')->toMediaCollection('images');
+        }
     }
 
     /**
